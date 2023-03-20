@@ -16,7 +16,6 @@ import {
   DialogTitle,
   Slide,
 } from '@mui/material';
-import './Staff.css';
 
 const drawerWidth = 250;
 function createData(name, staffID, contact, shiftingHour) {
@@ -51,7 +50,12 @@ export default function Staffs() {
         width: { sm: `calc(97% - ${drawerWidth}px)` },
         ml: { sm: `${drawerWidth}px` },
       }}
-      className="staffTable"
+      style={{
+        'border-radius': '4px',
+        'box-sizing': 'border-box',
+        'box-shadow': '0px 5px 0px 5px #3c175b4c',
+        padding: '3px',
+      }}
     >
       <Table sx={{ minWidth: 500 }} aria-label="simple table">
         <TableHead>
@@ -100,7 +104,14 @@ export default function Staffs() {
               <TableCell align="center">{row.contact}</TableCell>
               <TableCell align="center">{row.shiftingHour}</TableCell>
               <TableCell align="center">
-                <Button className="paybtn" onClick={handleClickOpen}>
+                <Button
+                  style={{
+                    'background-color': 'rgba(47, 35, 77, 0.822)',
+                    color: 'rgb(232, 238, 244)',
+                    'border-radius': '4px',
+                  }}
+                  onClick={handleClickOpen}
+                >
                   Payment
                 </Button>
                 <Dialog

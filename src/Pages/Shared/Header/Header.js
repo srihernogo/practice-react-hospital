@@ -18,7 +18,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { NavLink } from 'react-router-dom';
-import { FaMandalorian, FaRunning } from 'react-icons/fa';
+import { FaEdit, FaMandalorian, FaRunning } from 'react-icons/fa';
 import { Alert } from '@mui/material';
 
 const drawerWidth = 210;
@@ -87,15 +87,17 @@ function Header(props) {
         </NavLink>
         {/* <Divider /> */}
         <NavLink
-          to="/Staffs"
+          to="/appointment"
           style={{ textDecoration: 'none', width: '100%', color: '#000' }}
         >
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <FaRunning style={{ color: '#000', fontSize: '1.5rem' }} />
+                <FaEdit style={{ color: '#000', fontSize: '1.5rem' }} />
+
+                {/* < style={{ color: '#000', fontSize: '1.5rem' }} /> */}
               </ListItemIcon>
-              <ListItemText primary="Staffs" />
+              <ListItemText primary="appointment" />
             </ListItemButton>
           </ListItem>
         </NavLink>
