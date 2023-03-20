@@ -147,7 +147,7 @@ export default function NewHeader() {
             style={{ textDecoration: 'none', width: '100%', color: '#000' }}
           >
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton style={{ borderRadius: '0 40px 40px 0' }}>
                 <ListItemIcon>
                   <FcHome style={{ color: '#000', fontSize: '1.5rem' }} />
                 </ListItemIcon>
@@ -156,7 +156,7 @@ export default function NewHeader() {
             </ListItem>
           </NavLink>
           <ListItem disablePadding>
-            <ListItemButton>
+            <ListItemButton style={{ borderRadius: '0 40px 40px 0' }}>
               <ListItemIcon>
                 <FaUserNurse
                   style={{
@@ -175,7 +175,6 @@ export default function NewHeader() {
               textAlign: 'justify',
               paddingLeft: '2.5rem',
               marginTop: '-2.4rem',
-              borderRadius: '0 30px 30px 0',
             }}
             aria-label="file system navigator"
             defaultExpanded={['1']}
@@ -201,7 +200,7 @@ export default function NewHeader() {
                 style={{ textDecoration: 'none', width: '100%', color: '#000' }}
               >
                 <ListItem disablePadding>
-                  <ListItemButton>
+                  <ListItemButton style={{ borderRadius: '0 40px 40px 0' }}>
                     <ListItemIcon>
                       <BsCardChecklist
                         style={{ color: '#000', fontSize: '1.3rem' }}
@@ -219,7 +218,7 @@ export default function NewHeader() {
                 style={{ textDecoration: 'none', width: '100%', color: '#000' }}
               >
                 <ListItem disablePadding>
-                  <ListItemButton>
+                  <ListItemButton style={{ borderRadius: '0 40px 40px 0' }}>
                     <ListItemIcon>
                       <MdOutlinePersonAddAlt
                         style={{ color: '#000', fontSize: '1.4rem' }}
@@ -250,7 +249,7 @@ export default function NewHeader() {
             style={{ textDecoration: 'none', width: '100%', color: '#000' }}
           >
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton style={{ borderRadius: '0 40px 40px 0' }}>
                 <ListItemIcon>
                   <TbBed style={{ color: '#000', fontSize: '1.5rem' }} />
                 </ListItemIcon>
@@ -264,7 +263,7 @@ export default function NewHeader() {
             style={{ textDecoration: 'none', width: '100%', color: '#000' }}
           >
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton style={{ borderRadius: '0 40px 40px 0' }}>
                 <ListItemIcon>
                   <AiOutlineFieldTime
                     style={{ color: '#000', fontSize: '1.5rem' }}
@@ -280,7 +279,7 @@ export default function NewHeader() {
             style={{ textDecoration: 'none', width: '100%', color: '#000' }}
           >
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton style={{ borderRadius: '0 40px 40px 0' }}>
                 <ListItemIcon>
                   <FaRunning style={{ color: '#000', fontSize: '1.5rem' }} />
                 </ListItemIcon>
@@ -293,7 +292,7 @@ export default function NewHeader() {
             style={{ textDecoration: 'none', width: '100%', color: '#000' }}
           >
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton style={{ borderRadius: '0 40px 40px 0' }}>
                 <ListItemIcon>
                   <LoginIcon style={{ color: '#000', fontSize: '1.5rem' }} />
                 </ListItemIcon>
