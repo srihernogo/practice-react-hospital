@@ -1,6 +1,5 @@
-import { Box, Grid, Paper, Typography } from '@mui/material';
+import { Box, Paper, Typography } from '@mui/material';
 import React from 'react';
-import HomeIcon from '@mui/icons-material/Home';
 import { FaAccessibleIcon, FaAmbulance } from 'react-icons/fa';
 import { GiCherish } from 'react-icons/gi';
 import { FiUsers } from 'react-icons/fi';
@@ -20,7 +19,7 @@ const Banner = () => {
           padding: '0 0.5rem',
         }}
       >
-        <Paper variant="outlined" sx={{ padding: '1rem' }}>
+        <Paper elevation={2} sx={{ padding: '1rem', width: '15rem' }}>
           <Box
             sx={{
               display: 'flex',
@@ -29,7 +28,15 @@ const Banner = () => {
             }}
           >
             <div>
-              <GiCherish style={{ fontSize: '1.5rem', color: '#22577E' }} />
+              <GiCherish
+                style={{
+                  fontSize: '3rem',
+                  color: '#22577E',
+                  border: '2px solid #22577E',
+                  borderRadius: '20%',
+                  padding: '5px',
+                }}
+              />
             </div>
             <div>
               <Typography sx={{ fontWeight: '800' }}>128</Typography>
@@ -38,7 +45,7 @@ const Banner = () => {
           </Box>
           <Typography>3 doctors joined today</Typography>
         </Paper>
-        <Paper variant="outlined" sx={{ padding: '1rem' }}>
+        <Paper elevation={2} sx={{ padding: '1rem', width: '14.5rem' }}>
           <Box
             sx={{
               display: 'flex',
@@ -48,7 +55,13 @@ const Banner = () => {
           >
             <div>
               <FaAccessibleIcon
-                style={{ fontSize: '1.5rem', color: '#125B50' }}
+                style={{
+                  fontSize: '3rem',
+                  color: '#125B50',
+                  border: '2px solid #125B50',
+                  borderRadius: '20%',
+                  padding: '5px',
+                }}
               />
             </div>
             <div>
@@ -58,7 +71,7 @@ const Banner = () => {
           </Box>
           <Typography>122 new patients admitted</Typography>
         </Paper>
-        <Paper variant="outlined" sx={{ padding: '1rem' }}>
+        <Paper elevation={2} sx={{ padding: '1rem', width: '15rem' }}>
           <Box
             sx={{
               display: 'flex',
@@ -67,7 +80,15 @@ const Banner = () => {
             }}
           >
             <div>
-              <FiUsers style={{ fontSize: '1.5rem', color: '#1572A1' }} />
+              <FiUsers
+                style={{
+                  fontSize: '3rem',
+                  color: '#1572A1',
+                  border: '2px solid #1572A1',
+                  borderRadius: '20%',
+                  padding: '5px',
+                }}
+              />
             </div>
             <div>
               <Typography sx={{ fontWeight: '800' }}>452</Typography>
@@ -77,7 +98,7 @@ const Banner = () => {
           <Typography>12 stuffs are on vacation</Typography>
         </Paper>
 
-        <Paper variant="outlined" sx={{ padding: '1rem' }}>
+        <Paper elevation={2} sx={{ padding: '1rem', width: '15rem' }}>
           <Box
             sx={{
               display: 'flex',
@@ -86,7 +107,15 @@ const Banner = () => {
             }}
           >
             <div>
-              <TbBed style={{ fontSize: '2rem', color: '#0E3EDA' }} />
+              <TbBed
+                style={{
+                  fontSize: '3rem',
+                  color: '#0E3EDA',
+                  border: '2px solid #0E3EDA',
+                  borderRadius: '20%',
+                  padding: '5px',
+                }}
+              />
             </div>
             <div>
               <Typography sx={{ fontWeight: '800' }}>142</Typography>
@@ -95,7 +124,7 @@ const Banner = () => {
           </Box>
           <Typography>10 bed remaining usable</Typography>
         </Paper>
-        <Paper variant="outlined" sx={{ padding: '1rem' }}>
+        <Paper elevation={2} sx={{ padding: '1rem', width: '15rem' }}>
           <Box
             sx={{
               display: 'flex',
@@ -104,7 +133,15 @@ const Banner = () => {
             }}
           >
             <div>
-              <FaAmbulance style={{ fontSize: '1.5rem', color: '#B33030' }} />
+              <FaAmbulance
+                style={{
+                  fontSize: '3rem',
+                  color: '#B33030',
+                  border: '2px solid #B33030',
+                  borderRadius: '20%',
+                  padding: '5px',
+                }}
+              />
             </div>
             <div>
               <Typography sx={{ fontWeight: '800' }}>120</Typography>
