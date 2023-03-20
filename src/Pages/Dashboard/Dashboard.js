@@ -210,7 +210,7 @@ export default function NewHeader() {
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
-        <Container>
+        <Container maxWidth="lg">
           <Outlet />
         </Container>
       </Main>
