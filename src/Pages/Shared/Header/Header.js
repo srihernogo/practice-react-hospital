@@ -86,7 +86,7 @@ function Header(props) {
         </NavLink>
         <Divider />
         <NavLink
-          to="/stuffs"
+          to="/Staffs"
           style={{ textDecoration: 'none', width: '100%', color: '#000' }}
         >
           <ListItem disablePadding>
@@ -94,7 +94,7 @@ function Header(props) {
               <ListItemIcon>
                 <FaRunning style={{ color: '#000', fontSize: '1.5rem' }} />
               </ListItemIcon>
-              <ListItemText primary="Stuffs" />
+              <ListItemText primary="Staffs" />
             </ListItemButton>
           </ListItem>
         </NavLink>
