@@ -21,12 +21,6 @@ import { NavLink } from 'react-router-dom';
 import { FaEdit, FaMandalorian, FaRunning } from 'react-icons/fa';
 import { Alert } from '@mui/material';
 
-// Not using this header for now
-// Not using this header for now
-// Not using this header for now
-// Not using this header for now
-// Not using this header for now
-
 const drawerWidth = 210;
 
 function Header(props) {
@@ -88,6 +82,20 @@ function Header(props) {
                 <HotelIcon style={{ color: '#000', fontSize: '1.5rem' }} />
               </ListItemIcon>
               <ListItemText primary="Patients" />
+            </ListItemButton>
+          </ListItem>
+        </NavLink>
+        {/* <Divider /> */}
+        <NavLink
+          to="/Staffs"
+          style={{ textDecoration: 'none', width: '100%', color: '#000' }}
+        >
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <FaRunning style={{ color: '#000', fontSize: '1.5rem' }} />
+              </ListItemIcon>
+              <ListItemText primary="Staffs" />
             </ListItemButton>
           </ListItem>
         </NavLink>

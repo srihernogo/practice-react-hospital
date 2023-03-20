@@ -16,6 +16,7 @@ import {
   DialogTitle,
   Slide,
 } from '@mui/material';
+import './Staff.css';
 
 const drawerWidth = 250;
 function createData(name, staffID, contact, shiftingHour) {
