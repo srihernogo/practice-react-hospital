@@ -4,14 +4,16 @@ import HomeIcon from '@mui/icons-material/Home';
 
 const Banner = () => {
   return (
-    <div>
+    <Box sx={{ margin: '0 1rem' }}>
       <Box
         sx={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           gap: '1rem',
-          margin: '0 0 0 12rem',
+          margin: { sm: '0 auto', md: '0 0 0 10rem' },
+          flexWrap: 'wrap',
+          padding: '0 0.5rem',
         }}
       >
         <Paper variant="outlined" sx={{ padding: '1rem' }}>
@@ -30,7 +32,7 @@ const Banner = () => {
               <p>Doctors</p>
             </div>
           </Box>
-          <Typography>3 doctors joined this week</Typography>
+          <Typography>3 doctors joined today</Typography>
         </Paper>
         <Paper variant="outlined" sx={{ padding: '1rem' }}>
           <Box
@@ -105,7 +107,7 @@ const Banner = () => {
           <Typography>19 Ambulence In service</Typography>
         </Paper>
       </Box>
-    </div>
+    </Box>
   );
 };
 
