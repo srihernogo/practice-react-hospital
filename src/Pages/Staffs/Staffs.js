@@ -18,7 +18,7 @@ import {
 } from '@mui/material';
 import './Staff.css';
 
-const drawerWidth = 250;
+const drawerWidth = 0;
 function createData(name, staffID, contact, shiftingHour) {
   return { name, staffID, contact, shiftingHour };
 }

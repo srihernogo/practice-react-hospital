@@ -20,7 +20,6 @@ import { FaMandalorian, FaRunning, FaUserNurse } from 'react-icons/fa';
 import { AiOutlineFieldTime } from 'react-icons/ai';
 import { TbBed } from 'react-icons/tb';
 import { FcHome } from 'react-icons/fc';
-import HomeIcon from '@mui/icons-material/Home';
 import { Outlet } from 'react-router-dom';
 import { Container } from '@mui/material';
 
