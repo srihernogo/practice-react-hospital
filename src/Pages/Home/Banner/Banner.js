@@ -12,13 +12,20 @@ const Banner = () => {
       <Box
         sx={{
           display: 'flex',
-          justifyContent: 'center',
+          justifyContent: {
+            xs: 'center',
+            sm: 'center',
+            md: 'space-between',
+            lg: 'space-between',
+            xl: 'space-between',
+          },
           alignItems: 'center',
-          gap: '1rem',
+          gap: '1rem 0',
           flexWrap: 'wrap',
+          width: '100%',
         }}
       >
-        <Paper elevation={2} sx={{ padding: '1rem', width: '15rem' }}>
+        <Paper elevation={2} sx={{ padding: '1rem', width: '14rem' }}>
           <Box
             sx={{
               display: 'flex',
@@ -44,7 +51,7 @@ const Banner = () => {
           </Box>
           <Typography>3 doctors joined today</Typography>
         </Paper>
-        <Paper elevation={2} sx={{ padding: '1rem', width: '14.5rem' }}>
+        <Paper elevation={2} sx={{ padding: '1rem', width: '14rem' }}>
           <Box
             sx={{
               display: 'flex',
@@ -70,7 +77,7 @@ const Banner = () => {
           </Box>
           <Typography>122 new patients admitted</Typography>
         </Paper>
-        <Paper elevation={2} sx={{ padding: '1rem', width: '15rem' }}>
+        <Paper elevation={2} sx={{ padding: '1rem', width: '14rem' }}>
           <Box
             sx={{
               display: 'flex',
@@ -97,7 +104,7 @@ const Banner = () => {
           <Typography>12 stuffs are on vacation</Typography>
         </Paper>
 
-        <Paper elevation={2} sx={{ padding: '1rem', width: '15rem' }}>
+        <Paper elevation={2} sx={{ padding: '1rem', width: '14rem' }}>
           <Box
             sx={{
               display: 'flex',
@@ -123,7 +130,7 @@ const Banner = () => {
           </Box>
           <Typography>10 bed remaining usable</Typography>
         </Paper>
-        <Paper elevation={2} sx={{ padding: '1rem', width: '15rem' }}>
+        <Paper elevation={2} sx={{ padding: '1rem', width: '14rem' }}>
           <Box
             sx={{
               display: 'flex',

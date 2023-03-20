@@ -24,6 +24,7 @@ import MedicationIcon from '@mui/icons-material/Medication';
 import Banner from '../Home/Banner/Banner';
 import DetailsChart from '../Home/DetailsChart/DetailsChart';
 import { Routes, Route, Outlet } from 'react-router-dom';
+import { Container } from '@mui/material';
 
 const drawerWidth = 240;
 
@@ -84,10 +85,10 @@ export default function NewHeader() {
   };
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', background: '#F6F6F6' }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
-        <Toolbar>
+        <Toolbar style={{ background: '#fff', color: '#000' }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -198,7 +199,9 @@ export default function NewHeader() {
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
-        <Outlet />
+        <Container>
+          <Outlet />
+        </Container>
       </Main>
     </Box>
   );

@@ -11,20 +11,22 @@ import {
 
 const DetailsChart = () => {
   const data = [
-    { name: 'Doctors', uv: 128, pv: 2400, amt: 2400 },
-    { name: 'Patients', uv: 368, pv: 2400, amt: 2400 },
-    { name: 'Stuffs', uv: 270, pv: 2400, amt: 2400 },
-    { name: 'Beds', uv: 142, pv: 2400, amt: 2400 },
+    { name: 'Doctor', uv: 128, pv: 2400, amt: 2400 },
+    { name: 'Patient', uv: 368, pv: 2400, amt: 2400 },
+    { name: 'Stuff', uv: 270, pv: 2400, amt: 2400 },
+    { name: 'Bed', uv: 142, pv: 2400, amt: 2400 },
     { name: 'Ambulence', uv: 120, pv: 2400, amt: 2400 },
   ];
   return (
     <div
       style={{
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         flexWrap: 'wrap',
         alignItems: 'center',
         marginTop: '2rem',
+        paddingTop: '2rem',
+        backgroundColor: '#fff',
       }}
     >
       <BarChart width={400} height={300} data={data}>

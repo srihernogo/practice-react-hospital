@@ -63,7 +63,7 @@ export default function Patients() {
       >
         <TableHead>
           <TableRow>
-            <StyledTableCell align="right">Patients Name </StyledTableCell>
+            <StyledTableCell align="center">Patients Name </StyledTableCell>
             <StyledTableCell align="center">Doctors Name</StyledTableCell>
             <StyledTableCell align="center">Contact</StyledTableCell>
             <StyledTableCell align="center">Date&nbsp;</StyledTableCell>
@@ -73,7 +73,7 @@ export default function Patients() {
         <TableBody>
           {rows.map((row) => (
             <StyledTableRow key={row.name}>
-              <StyledTableCell align="right" component="th" scope="row">
+              <StyledTableCell align="center" component="th" scope="row">
                 {row.name}
               </StyledTableCell>
               <StyledTableCell align="center">{row.calories}</StyledTableCell>
