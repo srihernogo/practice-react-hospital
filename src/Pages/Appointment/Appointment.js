@@ -3,6 +3,8 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { useForm } from 'react-hook-form';
 import './Appointment.css';
+import Calender from '../Shared/Calender/Calender';
+import Time from '../Shared/Time/Time';
 const Appointment = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
@@ -46,7 +48,7 @@ const Appointment = () => {
             <h4>Date:</h4>
           </Grid>
           <Grid item xs={12} md={8}>
-            <input {...register} />
+            <Calender />
           </Grid>
         </Grid>
         <Grid container spacing={2}>
@@ -54,7 +56,7 @@ const Appointment = () => {
             <h4>Time:</h4>
           </Grid>
           <Grid item xs={12} md={8}>
-            <input {...register} />
+            <Time />
           </Grid>
         </Grid>
         <input
