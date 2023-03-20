@@ -5,16 +5,18 @@ import { useForm } from 'react-hook-form';
 import './Appointment.css';
 import Calender from '../Shared/Calender/Calender';
 import Time from '../Shared/Time/Time';
-import { borderRadius } from '@mui/system';
 const Appointment = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
 
   return (
-    <Box sx={{ background: '#fff' }}>
+    <Box
+      sx={{ background: '#fff' }}
+      style={{ boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)' }}
+    >
       <form onSubmit={handleSubmit(onSubmit)} className="text-center">
-        <h3>Take An Appointment</h3>
         <Box className="appointment">
+          <h3>Take An Appointment</h3>
           <Grid container spacing={2}>
             <Grid item xs={12} md={4}>
               <h4>Doctor's name:</h4>
