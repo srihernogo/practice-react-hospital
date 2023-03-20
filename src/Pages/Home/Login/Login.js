@@ -23,15 +23,27 @@ const Login = () => {
 
   return (
     <Container fixed>
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={2}>
+      <Box
+        sx={{
+          flexGrow: 1,
+          height: '80vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Grid
+          container
+          spacing={2}
+          sx={{ background: '#fff', padding: '6rem 0rem' }}
+        >
           <Grid item xs={12} md={12}>
             <Typography variant="bosy1" gutterBottom component="div">
               Login
             </Typography>
             <form onClick={handleLoginSubmit}>
               <TextField
-                sx={{ width: '50%', m: 1 }}
+                sx={{ width: { sm: 'none', md: '50%', lg: '50%' }, m: 1 }}
                 id="standard-basic"
                 label="Your mail"
                 name="email"
@@ -40,7 +52,7 @@ const Login = () => {
               />
 
               <TextField
-                sx={{ width: '50%', m: 1 }}
+                sx={{ width: { sm: 'none', md: '50%', lg: '50%' }, m: 1 }}
                 id="standard-basic"
                 label="Your password"
                 name="password"
@@ -62,7 +74,7 @@ const Login = () => {
 
               <Link to="/registration">
                 <Button sx={{ width: '50%', m: 1 }} color="inherit">
-                  For the First time
+                  For the First time?
                 </Button>
               </Link>
             </form>
