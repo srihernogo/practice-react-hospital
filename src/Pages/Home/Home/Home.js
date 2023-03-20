@@ -34,9 +34,10 @@ const Home = () => {
                 textAlign: 'left',
                 paddingLeft: '20px',
                 paddingTop: '20px',
+                fontFamily: 'monospace',
               }}
             >
-              Parcentage of patients
+              <strong>Parcentage of patients</strong>
             </Typography>
             <RadialChart></RadialChart>
           </Box>
