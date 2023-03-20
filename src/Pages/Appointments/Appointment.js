@@ -35,17 +35,16 @@ export default class Appointment extends Component {
   render() {
     return (
       <Box
-        sx={{ background: '#fff' }}
+        sx={{ background: '#fff', height: '100%' }}
         style={{ boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)' }}
       >
         <form className="text-center">
           <Box className="appointment">
-            <h3>Take An Appointment</h3>
+            <h3 style={{ padding: '1rem 0' }}>Take An Appointment</h3>
             <Grid container spacing={2}>
               <Grid item xs={12} md={4}>
                 <h4>Select Doctor</h4>
               </Grid>
-
               <Grid item xs={12} md={4}>
                 <Select
                   style={{ width: '50%', textAlign: 'center' }}
@@ -65,11 +64,11 @@ export default class Appointment extends Component {
               </Grid>
             </Grid>
           </Box>
-          <Grid container spacing={2}>
+          <Grid sx={{ mt: 2 }} container spacing={2}>
             <Grid item xs={12} md={4}>
               <h4>Select Date</h4>
             </Grid>
-            <Grid item xs={12} md={8}>
+            <Grid item xs={12} md={4}>
               <Calender />
             </Grid>
           </Grid>
@@ -77,7 +76,7 @@ export default class Appointment extends Component {
             <Grid item xs={12} md={4}>
               <h4>Select Time</h4>
             </Grid>
-            <Grid item xs={12} md={8}>
+            <Grid item xs={12} md={4}>
               <Time />
             </Grid>
           </Grid>

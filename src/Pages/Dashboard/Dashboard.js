@@ -233,6 +233,7 @@ export default function NewHeader() {
               </NavLink>
             </TreeItem>
           </TreeView>
+          {/* Only for patients */}
           {/* <NavLink to="/doctors" style={{ textDecoration: 'none', width: '100%', color: '#000' }}>
                         <ListItem disablePadding>
                             <ListItemButton>
