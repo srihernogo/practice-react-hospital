@@ -26,7 +26,9 @@ import { Container } from '@mui/material';
 import { BsCardChecklist } from 'react-icons/bs';
 import TreeView from '@mui/lab/TreeView';
 import TreeItem from '@mui/lab/TreeItem';
+
 import LoginIcon from '@mui/icons-material/Login';
+export { useState } from 'react';
 
 const drawerWidth = 240;
 
@@ -153,25 +155,46 @@ export default function NewHeader() {
               </ListItemButton>
             </ListItem>
           </NavLink>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <FaUserNurse
+                  style={{
+                    color: '#000',
+                    fontSize: '1.5rem',
+                    marginRight: '1rem',
+                  }}
+                />
+              </ListItemIcon>
+            </ListItemButton>
+          </ListItem>
           <TreeView
-            style={{ color: '#000', textAlign: 'start', padding: '0 1rem' }}
+            style={{
+              color: '#000',
+              background: '#fff',
+              textAlign: 'justify',
+              paddingLeft: '2.5rem',
+              marginTop: '-2.4rem',
+              borderRadius: '0 30px 30px 0',
+            }}
             aria-label="file system navigator"
+            defaultExpanded={['1']}
             defaultCollapseIcon={
-              <div style={{ padding: '.8rem 0' }}>
+              <div style={{ padding: '.3rem 0', visibility: 'hidden' }}>
                 <FaUserNurse style={{ color: '#000', fontSize: '1.5rem' }} />
               </div>
             }
             defaultExpandIcon={
-              <div style={{ padding: '.8rem 0' }}>
+              <div style={{ padding: '.3rem 0', visibility: 'hidden' }}>
                 <FaUserNurse style={{ color: '#000', fontSize: '1.5rem' }} />
               </div>
             }
-            sx={{ height: 160, flexGrow: 1, maxWidth: 400, overflowY: 'auto' }}
+            sx={{ height: 140, flexGrow: 1, maxWidth: 400, overflowY: 'auto' }}
           >
             <TreeItem
               nodeId="1"
               label="Doctors"
-              style={{ color: '#000', PaddingLeft: '2rem' }}
+              style={{ color: '#000', background: '#FFFFFF' }}
             >
               <NavLink
                 to="/doctors"
@@ -181,10 +204,13 @@ export default function NewHeader() {
                   <ListItemButton>
                     <ListItemIcon>
                       <BsCardChecklist
-                        style={{ color: '#000', fontSize: '1.5rem' }}
+                        style={{ color: '#000', fontSize: '1.3rem' }}
                       />
                     </ListItemIcon>
-                    <ListItemText primary="Doctors List" />
+                    <ListItemText
+                      primary="Doctor List"
+                      style={{ marginLeft: '-1rem' }}
+                    />
                   </ListItemButton>
                 </ListItem>
               </NavLink>
@@ -196,10 +222,13 @@ export default function NewHeader() {
                   <ListItemButton>
                     <ListItemIcon>
                       <MdOutlinePersonAddAlt
-                        style={{ color: '#000', fontSize: '1.5rem' }}
+                        style={{ color: '#000', fontSize: '1.4rem' }}
                       />
                     </ListItemIcon>
-                    <ListItemText primary="Add Doctor" />
+                    <ListItemText
+                      primary="Add Doctor"
+                      style={{ marginLeft: '-1rem' }}
+                    />
                   </ListItemButton>
                 </ListItem>
               </NavLink>
