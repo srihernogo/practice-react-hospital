@@ -8,7 +8,7 @@ import {
   Legend,
   CartesianGrid,
 } from 'recharts';
-import GenderPieChart from '../GenderPieChart/GenderPieChart';
+import GenderPieChart from './GenderPieChart/GenderPieChart';
 
 const DetailsChart = () => {
   const data = [
