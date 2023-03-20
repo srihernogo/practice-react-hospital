@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { useForm } from 'react-hook-form';
 import './Appointment.css';
 import Calender from '../Shared/Calender/Calender';
 import Time from '../Shared/Time/Time';
+// import { appointmentData } from '../../utils/appointmentData';
+
 const Appointment = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
+
+  const [appointments, setAppointments] = useState([]);
+  useEffect(() => {
+    fetch('./appointmentData.json')
+      .then((res) => res.json())
+      .then((data) => setAppointments(data));
+  }, []);
 
   return (
     <Box
@@ -19,28 +28,42 @@ const Appointment = () => {
           <h3>Take An Appointment</h3>
           <Grid container spacing={2}>
             <Grid item xs={12} md={4}>
-              <h4>Doctor's name:</h4>
+              <h4>Select Doctor</h4>
             </Grid>
             <Grid item xs={12} md={8}>
-              <select {...register('name')}>
-                <option value="Dr.Basu">Dr.Basu</option>
-                <option value="Dr.Rahman">Dr.Rahman</option>
-                <option value="Dr.Rehana">Dr.Rehana</option>
+              <select
+                {...register('name')}
+                style={{ width: '80%', textAlign: 'center' }}
+              >
+                {appointments.map((item, index) => (
+                  <option key={index} value={item.name}>
+                    {item.name}
+                  </option>
+                ))}
               </select>
             </Grid>
           </Grid>
           <Grid container spacing={2}>
             <Grid item xs={12} md={4}>
-              <h4>Consultancy Fees:</h4>
+              <h4>Consultency Fee</h4>
             </Grid>
             <Grid item xs={12} md={8}>
-              <input type="number" {...register} />
+              <select
+                {...register('name')}
+                style={{ width: '80%', textAlign: 'center' }}
+              >
+                {appointments.map((item, index) => (
+                  <option key={index} value={item.name}>
+                    {item.fee}
+                  </option>
+                ))}
+              </select>
             </Grid>
           </Grid>
         </Box>
         <Grid container spacing={2}>
           <Grid item xs={12} md={4}>
-            <h4>Date:</h4>
+            <h4>Select Date</h4>
           </Grid>
           <Grid item xs={12} md={8}>
             <Calender />
@@ -48,7 +71,7 @@ const Appointment = () => {
         </Grid>
         <Grid container spacing={2}>
           <Grid item xs={12} md={4}>
-            <h4>Time:</h4>
+            <h4>Select Time</h4>
           </Grid>
           <Grid item xs={12} md={8}>
             <Time />

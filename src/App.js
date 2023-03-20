@@ -7,7 +7,7 @@ import Patients from './Pages/Patients/Patients';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import Staffs from './Pages/Staffs/Staffs';
-import Appointment from './Pages/Appointment/Appointment';
+import Appointment from './Pages/Appointments/Appointment';
 import AddDoctor from './Pages/Doctors/AddDoctor/AddDoctor';
 import Login from './Pages/Home/Login/Login';
 import Registration from './Pages/Home/Registration/Registration';
