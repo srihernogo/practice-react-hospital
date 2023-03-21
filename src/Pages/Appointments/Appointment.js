@@ -35,7 +35,10 @@ export default class Appointment extends Component {
   render() {
     return (
       <Box
-        sx={{ background: '#fff', height: '100%' }}
+        sx={{
+          background: '#fff',
+          height: { md: '80vh', lg: '80vh', xs: '100%', sm: '100%' },
+        }}
         style={{ boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)' }}
       >
         <form className="text-center">
@@ -97,21 +100,21 @@ export default class Appointment extends Component {
               }}
               type="submit"
             />
-            <input
+            {/* <input
               style={{
-                background: '#1C0633',
-                color: '#FAF5FA ',
-                marginBottom: '1rem',
-                marginTop: '1rem',
-                padding: '1rem 3rem',
-                fontSize: '1rem',
-                borderRadius: '5px',
-                cursor: 'pointer',
-                marginLeft: '1rem',
+                background: "#1C0633",
+                color: "#FAF5FA ",
+                marginBottom:"1rem",
+                marginTop: "1rem",
+                padding: "1rem 3rem",
+                fontSize: "1rem",
+                borderRadius: "5px",
+                cursor:'pointer',
+                marginLeft:'1rem'
               }}
               type="submit"
               value="Print PDF of Reciption"
-            />
+            /> */}
           </Box>
         </form>
       </Box>
