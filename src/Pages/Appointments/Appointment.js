@@ -15,6 +15,34 @@ const Appointment = () => {
       .then((data) => setDoctorInfo(data[0]));
   }, []);
   // const {name} = doctorInfo;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    // const data = {
+    //   doctorName: doctorInfo.name,
+    //   doctorEmail: doctorInfo.email,
+    //   doctorFee: doctorInfo.fee,
+    //   doctorShift: doctorInfo.time,
+    //   // appointmentDate: formData.get('date'),
+    //   // patientName: formData.get('name'),
+    //   // patientPhone: formData.get('phone'),
+    //   // patientSymptoms: formData.get('symptoms'),
+    // }
+    // console.log(data);
+    // fetch('http://localhost:5000/appointments', {
+    //   method: 'POST',
+    //   headers: {
+    //     'content-type': 'application/json'
+    //   },
+    //   body: JSON.stringify(data)
+    // })
+    // .then(res => res.json())
+    // .then(success => {
+    //   if(success){
+    //     alert('Appointment Created Successfully')
+    //   }
+    // })
+  };
   return (
     <Box
       sx={{
@@ -23,7 +51,7 @@ const Appointment = () => {
       }}
       style={{ boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)' }}
     >
-      <form className="text-center">
+      <form onSubmit={handleSubmit} className="text-center">
         <Box
           className="appointment"
           sx={{ paddingTop: { md: '5rem', lg: '5rem' } }}
@@ -37,7 +65,7 @@ const Appointment = () => {
               <Typography
                 variant="h6"
                 sx={{
-                  background: '#064663',
+                  background: '#6D67E4',
                   borderRadius: '3px',
                   color: '#fff',
                 }}
@@ -56,7 +84,7 @@ const Appointment = () => {
               <Typography
                 variant="h6"
                 sx={{
-                  background: '#064663',
+                  background: '#6D67E4',
                   borderRadius: '3px',
                   color: '#fff',
                 }}
@@ -75,7 +103,7 @@ const Appointment = () => {
             <Typography
               variant="h6"
               sx={{
-                background: '#064663',
+                background: '#6D67E4',
                 width: '98%',
                 margin: '0 auto',
                 borderRadius: '3px',
@@ -88,7 +116,9 @@ const Appointment = () => {
         </Grid>
         <Grid sx={{ mt: 2 }} container spacing={2}>
           <Grid item xs={12} md={4}>
-            <h4>Choose Date</h4>
+            <Typography variant="h6" sx={{ mt: 2 }}>
+              Choose date{' '}
+            </Typography>
           </Grid>
           <Grid item xs={12} md={4}>
             <Calender />
@@ -101,7 +131,7 @@ const Appointment = () => {
         >
           <input
             style={{
-              background: '#8758FF',
+              background: '#6D67E4',
               color: '#FAF5FA ',
               fontWeight: 800,
               marginBottom: '1rem',
