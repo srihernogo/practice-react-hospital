@@ -3,13 +3,13 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { Button, Card, TextField, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import GoogleIcon from '@mui/icons-material/Google';
 import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
   // Adding google sign-in system
-  const { user, signInWithGoogle, logOut } = useAuth();
+  const { user, signInWithGoogle, logOut, loginUser, error } = useAuth();
 
   const [loginData, setLoginData] = useState({});
   const handleOnChange = (e) => {
@@ -22,6 +22,8 @@ const Login = () => {
   };
 
   const handleLoginSubmit = (e) => {
+    loginUser(loginData.email, loginData.password);
+
     e.preventDefault();
   };
 
@@ -31,7 +33,6 @@ const Login = () => {
         minWidth: 200,
         maxWidth: '100vw',
         height: '865px',
-        // background: 'linear-gradient(to right bottom, #430089, #82ffa1)'
       }}
       xs={12}
       md={12}
@@ -67,7 +68,7 @@ const Login = () => {
 
                 <TextField
                   sx={{ width: '50%', m: 1 }}
-                  id="standard-basic"
+                  id="standard-basic-2"
                   label="Your password"
                   name="password"
                   onChange={handleOnChange}
@@ -79,8 +80,8 @@ const Login = () => {
                   varient="contained"
                   type="submit"
                   style={{
-                    backgroundColor: '#e6ecf0',
-                    color: 'black',
+                    backgroundColor: 'green',
+                    color: 'white',
                   }}
                 >
                   Login
@@ -94,13 +95,19 @@ const Login = () => {
                   style={{
                     color:
                       'linear-gradient(to right bottom,(2, 89, 87, 0),(234, 67, 53))',
+                    cursor: 'pointer',
                   }}
                 ></GoogleIcon>
                 <br />
-                {user.email && <button onClick={logOut}>Logout</button>}
+                {user.email ? (
+                  <button onClick={logOut}>Logout</button>
+                ) : (
+                  <span>Not logged in</span>
+                )}
                 <br />
                 {user.email && <span>Logged in as : {user.displayName}</span>}
                 <br />
+                {error}
                 <Link to="/registration">
                   <Button sx={{ width: '50%', m: 1 }}>
                     For the First time

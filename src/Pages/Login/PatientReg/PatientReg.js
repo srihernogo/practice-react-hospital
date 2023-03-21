@@ -3,11 +3,15 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { Button, Card, TextField, Typography } from '@mui/material';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import Gender from '../../Shared/Gender/Gender';
+import useAuth from '../../../hooks/useAuth';
 
 const PatientReg = () => {
   const [loginData, setLoginData] = useState({});
+  const { error, registerUser } = useAuth();
+  const navigate = useNavigate();
+
   const handleOnChange = (e) => {
     const feild = e.target.name;
     const value = e.target.value;
@@ -17,9 +21,16 @@ const PatientReg = () => {
     setLoginData(newLoginData);
   };
 
-  const handleLoginSubmit = (e) => {
+  const handleSignUpSubmit = (e) => {
     e.preventDefault();
+
+    // if (loginData.password !== loginData.password2) {
+    //   alert("Your Password did not matched");
+    // }
+    registerUser(loginData.name, loginData.email, loginData.password, navigate);
+    alert('Successfully logged in!');
   };
+
   return (
     <div>
       <Container fixed>
@@ -27,14 +38,14 @@ const PatientReg = () => {
           Register As Patient
         </Typography>
         <Box>
-          <form className="text-center" onClick={handleLoginSubmit}>
+          <form className="text-center" onSubmit={handleSignUpSubmit}>
             <Grid container spacing={2}>
               <Grid item xs={12} md={6} sm={12}>
                 <TextField
                   sx={{ width: '70%', m: 1 }}
                   id="standard-basic"
                   label="First Name"
-                  name="text"
+                  name="name"
                   onChange={handleOnChange}
                   variant="standard"
                 />
@@ -90,7 +101,7 @@ const PatientReg = () => {
                   sx={{ width: '70%', m: 1 }}
                   id="standard-basic"
                   label="Confirm password"
-                  name=" confirm password"
+                  name="password2"
                   onChange={handleOnChange}
                   variant="standard"
                   type="password"
@@ -102,29 +113,23 @@ const PatientReg = () => {
                 <Gender></Gender>
               </Grid>
               <Grid item xs={12} md={6}>
-                {/* <TextField
-              sx={{width:'50%',m:1}}
-              id="standard-basic"
-              label="Your mail"
-              name='email'
-            //   onChange={handleOnChange}
-              variant="standard" /> */}
+                <div>{error}</div>
               </Grid>
             </Grid>
+            <Button
+              sx={{ width: '30%', m: 3 }}
+              varient="contained"
+              type="submit"
+              style={{
+                backgroundColor: 'green',
+                color: '#fff',
+              }}
+            >
+              Register
+            </Button>
           </form>
-          <Button
-            sx={{ width: '30%', m: 3 }}
-            varient="contained"
-            type="submit"
-            style={{
-              backgroundColor: ' #e6ecf0',
-              color: 'black',
-            }}
-          >
-            Register
-          </Button>
         </Box>
-
+        {/* Go to login Page */}
         <Link to="/login">
           <Button sx={{ width: '50%', m: 1 }} color="inherit">
             Already have an account

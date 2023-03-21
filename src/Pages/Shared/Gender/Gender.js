@@ -8,7 +8,6 @@ import FormLabel from '@mui/material/FormLabel';
 const Gender = () => {
   return (
     <div>
-      {' '}
       <FormControl>
         <FormLabel
           id="demo-radio-buttons-group-label"
