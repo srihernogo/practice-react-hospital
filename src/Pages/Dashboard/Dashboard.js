@@ -214,7 +214,7 @@ export default function NewHeader() {
                       />
                     </ListItemIcon>
                     <ListItemText
-                      primary="Doctor List"
+                      primary="Appointment"
                       style={{ marginLeft: '-1rem' }}
                     />
                   </ListItemButton>
@@ -268,7 +268,7 @@ export default function NewHeader() {
                       />
                     </ListItemIcon>
                     <ListItemText
-                      primary="Update Doctor"
+                      primary="Find Doctor"
                       style={{ marginLeft: '-1rem' }}
                     />
                   </ListItemButton>
