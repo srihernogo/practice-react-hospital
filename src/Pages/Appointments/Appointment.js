@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import './Appointment.css';
 import Calender from '../Shared/Calender/Calender';
@@ -12,8 +12,9 @@ const Appointment = () => {
   useEffect(() => {
     fetch(`http://localhost:5000/doctors/${email}`)
       .then((res) => res.json())
-      .then((data) => setDoctorInfo(data));
+      .then((data) => setDoctorInfo(data[0]));
   }, []);
+  // const {name} = doctorInfo;
   return (
     <Box
       sx={{
@@ -27,26 +28,34 @@ const Appointment = () => {
           <h3 style={{ padding: '1rem 0' }}>Take An Appointment</h3>
           <Grid container spacing={2}>
             <Grid item xs={12} md={4}>
-              <h4>Selected Doctor</h4>
+              <Typography variant="h6">Selected Doctor</Typography>
             </Grid>
             <Grid item xs={12} md={4}>
-              {doctorInfo.name}
+              <Typography
+                variant="h6"
+                sx={{ background: '#B1B2FF', borderRadius: '3px' }}
+              >
+                {doctorInfo.name}
+              </Typography>
             </Grid>
           </Grid>
-          <Grid container spacing={2}>
+          <Grid container spacing={2} sx={{ my: 2 }}>
             <Grid item xs={12} md={4}>
-              <h4>Consultency Fee</h4>
+              <Typography variant="h6">Consultency Fee</Typography>
             </Grid>
             <Grid item xs={12} md={4}>
-              <div className="textA" style={{ textAlign: 'center' }}>
+              <Typography
+                variant="h6"
+                sx={{ background: '#B1B2FF', borderRadius: '3px' }}
+              >
                 {doctorInfo.fee}
-              </div>
+              </Typography>
             </Grid>
           </Grid>
         </Box>
         <Grid sx={{ mt: 2 }} container spacing={2}>
           <Grid item xs={12} md={4}>
-            <h4>Select Date</h4>
+            <h4>Choose Date</h4>
           </Grid>
           <Grid item xs={12} md={4}>
             <Calender />
