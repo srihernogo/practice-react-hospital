@@ -9,9 +9,9 @@ import Header from './Pages/Shared/Header/Header';
 import Staffs from './Pages/Staffs/Staffs';
 import Appointment from './Pages/Appointments/Appointment';
 import AddDoctor from './Pages/Doctors/AddDoctor/AddDoctor';
-import Login from './Pages/Home/Login/Login';
-import Registration from './Pages/Home/Registration/Registration';
+import Registration from './Pages/Login/Registration/Registration';
 import PatientViewDoctor from './Pages/Doctors/Doctors/PatientViewDoctor';
+import Login from './Pages/Login/Login';
 
 function App() {
   return (

@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { Button, Card, TextField, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
-import Register from '../Register/Register';
 import GoogleIcon from '@mui/icons-material/Google';
 
 const Login = () => {
@@ -82,7 +81,7 @@ const Login = () => {
                 >
                   Login
                 </Button>
-                <Typography>----------OR----------</Typography>
+                <Typography>-----------OR-----------</Typography>
                 <GoogleIcon
                   sx={{ width: '50%', m: 1 }}
                   varient="contained"
