@@ -30,7 +30,7 @@ const Registration = () => {
         boxShadow: 'none',
         // marginTop:'15%',
         // backgroundColor:'rgb(45, 225, 240)',
-        background: 'linear-gradient(to right bottom, #430089, #82ffa1)',
+        // background: 'linear-gradient(to right bottom, #430089, #82ffa1)'
       }}
       xs={12}
       md={6}
@@ -58,8 +58,10 @@ const Registration = () => {
               id="standard-basic"
               label="Your mail"
               name='email'rt
+
               onChange={handleOnChange}
               variant="standard" />
+
             <TextField
               sx={{width:'50%',m:1}}
               id="standard-basic"
@@ -82,6 +84,7 @@ const Registration = () => {
               name='text'
               onChange={handleOnChange}
               variant="standard" />
+
               <TextField
               sx={{width:'50%',m:1}}
               id="standard-basic"
@@ -89,6 +92,7 @@ const Registration = () => {
               name='email'
               onChange={handleOnChange}
               variant="standard" />
+
               <TextField
               sx={{width:'50%',m:1}}
               id="standard-basic"
@@ -107,6 +111,7 @@ const Registration = () => {
               color: 'white'
             }}>Login</Button>
                   
+
         </form> */}
         {/* </Grid>
       
