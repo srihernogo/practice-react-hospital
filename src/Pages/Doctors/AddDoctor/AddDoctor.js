@@ -84,7 +84,7 @@ const AddDoctor = () => {
       time,
       date,
       gender,
-    }; // degrees, picture
+    }; // picture
     fetch('http://localhost:5000/doctors', {
       method: 'POST',
       headers: {

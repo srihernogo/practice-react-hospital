@@ -144,31 +144,34 @@ export default function PatientViewDoctor() {
               >
                 {doctorData.name}
               </TableCell>
-              <TableCell align="center">{doctorData.specialist}</TableCell>
+              <TableCell
+                align="center"
+                style={{ borderRight: '1px solid #ccc' }}
+              >
+                {doctorData.specialist}
+              </TableCell>
               <TableCell align="center">{doctorData.time}</TableCell>
               <TableCell align="center">{doctorData.fee}</TableCell>
               <TableCell align="center">{doctorData.phone}</TableCell>
               <TableCell align="center">{doctorData.gender}</TableCell>
               <TableCell align="center">
-                <form name="button">
-                  <NavLink to={`/addPatient/${doctorData.email}`}>
-                    <input
-                      style={{
-                        color: '#fff',
-                        background: '#000',
-                        padding: '5px 10px',
-                        cursor: 'pointer',
-                        border: 'none',
-                        borderRadius: '5px',
-                        backgroundColor: '#224B0C',
-                      }}
-                      id="submit"
-                      type="submit"
-                      name="appointment"
-                      value="Appointment"
-                    />
-                  </NavLink>
-                </form>
+                <NavLink to={`/addPatient/${doctorData.email}`}>
+                  <input
+                    style={{
+                      color: '#fff',
+                      background: '#000',
+                      padding: '5px 10px',
+                      cursor: 'pointer',
+                      border: 'none',
+                      borderRadius: '5px',
+                      backgroundColor: '#224B0C',
+                    }}
+                    id="submit"
+                    type="submit"
+                    name="appointment"
+                    value="Appointment"
+                  />
+                </NavLink>
               </TableCell>
             </TableRow>
           ))}

@@ -16,6 +16,8 @@ import PageNotFound from './Pages/PageNotFound/PageNotFound';
 import AddPatient from './Pages/Patients/AddPatients/AddPatient';
 import PatientDetails from './Pages/Patients/PatientsDetails/PatientDetails';
 import ViewDoctors from './Pages/Patients/ViewDoctors/ViewDoctors';
+import DeleteDoctor from './Pages/Doctors/DeleteDoctor/DeleteDoctor';
+import UpdateDoctor from './Pages/Doctors/UpdateDoctor/UpdateDoctor';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
               <Route index element={<Home></Home>} />
               <Route path="doctors" element={<PatientViewDoctor />} />
               <Route path="addDoctor" element={<AddDoctor />} />
+              <Route path="deleteDoctor" element={<DeleteDoctor />} />
+              <Route path="updateDoctor" element={<UpdateDoctor />} />
               <Route path="patients" element={<Patients />} />
               <Route path="addPatient" element={<AddPatient />}>
                 <Route path=":email" element={<AddPatient />} />
