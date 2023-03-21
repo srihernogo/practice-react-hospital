@@ -7,10 +7,10 @@ import Time from '../Shared/Time/Time';
 import { useParams } from 'react-router-dom';
 
 const Appointment = () => {
-  const { doctorId } = useParams();
+  const { email } = useParams();
   const [doctorInfo, setDoctorInfo] = useState([]);
   useEffect(() => {
-    fetch(`./doctorDetails.json/${doctorId}`)
+    fetch(`http://localhost:5000/doctors/${email}`)
       .then((res) => res.json())
       .then((data) => setDoctorInfo(data));
   }, []);
