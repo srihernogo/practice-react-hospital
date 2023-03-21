@@ -14,7 +14,7 @@ import {
   Fab,
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 import { CalendarMonth } from '@mui/icons-material';
@@ -31,8 +31,7 @@ const MenuProps = {
   },
 };
 
-const names = ['MBBS', 'BCS', 'FCPS', 'PHD', 'BMBS', 'MBChC', 'MBBCh'];
-
+const degreeList = ['MBBS', 'BCS', 'FCPS', 'PHD', 'BMBS', 'MBChC', 'MBBCh'];
 function getStyles(name, personName, theme) {
   return {
     fontWeight:
@@ -45,6 +44,7 @@ function getStyles(name, personName, theme) {
 const AddDoctor = () => {
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
+  const [date, setDate] = React.useState(new Date().toDateString());
 
   const handleChange = (event) => {
     const {
@@ -70,21 +70,34 @@ const AddDoctor = () => {
     const doj = formData.get('doj');
     const gender = formData.get('gender');
     const picture = formData.get('image');
-
-    console.log(
+    const degrees = formData.get('degrees');
+    const data = {
       name,
-      email,
       phone,
+      email,
       fee,
       age,
       specialist,
       address,
+      degrees,
       salary,
       time,
-      doj,
+      date,
       gender,
-      picture
-    );
+    }; // degrees, picture
+    fetch('http://localhost:5000/doctors', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((success) => {
+        if (success) {
+          alert('Doctor Added Successfully');
+        }
+      });
   };
   return (
     <Box
@@ -219,6 +232,7 @@ const AddDoctor = () => {
               <Select
                 labelId="demo-multiple-chip-label"
                 id="demo-multiple-chip"
+                name="degrees"
                 multiple
                 value={personName}
                 onChange={handleChange}
@@ -237,7 +251,7 @@ const AddDoctor = () => {
                 <MenuItem disabled value="">
                   <em>You Can Choose Multiple Degrees </em>
                 </MenuItem>
-                {names.map((name) => (
+                {degreeList.map((name) => (
                   <MenuItem
                     key={name}
                     value={name}
@@ -287,7 +301,7 @@ const AddDoctor = () => {
               required
               fullWidth
             /> */}
-            <Calender name="doj" />
+            <Calender value={date} setValue={setDate} />
           </Grid>
           <Grid item xs={12} md={4}>
             <Typography variant="OVERLINE TEXT">Gender</Typography>

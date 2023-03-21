@@ -119,6 +119,7 @@ const AddPatient = () => {
     const address = formData.get('address');
     const medicalHistory = formData.get('medicalHistory');
     const gender = formData.get('radio-buttons-group');
+    const blood = formData.get('blood');
     const doctorName = doctorInfo.name;
     const doctorEmail = doctorInfo.email;
     const doctorPhone = doctorInfo.phone;
@@ -139,6 +140,7 @@ const AddPatient = () => {
       // file,
       // prepscription,
       gender,
+      blood,
       date,
     };
     // console.log(
@@ -393,6 +395,22 @@ const AddPatient = () => {
                 control={<Radio />}
                 label="Female"
               />
+            </RadioGroup>
+          </Grid>
+          {/* Blood group */}
+          <Grid item xs={12} md={4}>
+            <Typography variant="OVERLINE TEXT">BLOOD</Typography>
+          </Grid>
+          <Grid item xs={12} md={8} sx={{ marginLeft: { md: '-5rem' } }}>
+            <RadioGroup row aria-labelledby="blood-label" name="blood" required>
+              <FormControlLabel value="O+" control={<Radio />} label="O+" />
+              <FormControlLabel value="O-" control={<Radio />} label="O-" />
+              <FormControlLabel value="A+" control={<Radio />} label="A+" />
+              <FormControlLabel value="A-" control={<Radio />} label="A-" />
+              <FormControlLabel value="B+" control={<Radio />} label="B+" />
+              <FormControlLabel value="B-" control={<Radio />} label="B-" />
+              <FormControlLabel value="AB+" control={<Radio />} label="AB+" />
+              <FormControlLabel value="AB-" control={<Radio />} label="AB-" />
             </RadioGroup>
           </Grid>
           {/* PREPSCRIPTION  */}
