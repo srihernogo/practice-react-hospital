@@ -302,7 +302,7 @@ export default function NewHeader() {
                 </ListItem>
               </NavLink>
               <NavLink
-                to="/addPatient"
+                to="/viewDoctors"
                 style={{ textDecoration: 'none', width: '100%', color: '#000' }}
               >
                 <ListItem disablePadding>
