@@ -21,6 +21,7 @@ import { AiOutlineFieldTime } from 'react-icons/ai';
 import {
   MdOutlinePersonAddAlt,
   MdOutlinePersonRemoveAlt1,
+  MdOutlinePersonSearch,
 } from 'react-icons/md';
 import { TbBed } from 'react-icons/tb';
 import { FcHome } from 'react-icons/fc';
@@ -262,7 +263,7 @@ export default function NewHeader() {
                 <ListItem disablePadding>
                   <ListItemButton style={{ borderRadius: '0 40px 40px 0' }}>
                     <ListItemIcon>
-                      <BsPersonCheck
+                      <MdOutlinePersonSearch
                         style={{ color: '#000', fontSize: '1.4rem' }}
                       />
                     </ListItemIcon>
