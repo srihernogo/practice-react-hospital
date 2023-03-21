@@ -24,7 +24,7 @@ const DoctortReg = () => {
     <div>
       <Container fixed>
         <Typography variant="h5" gutterBottom component="div">
-          Register As Patient
+          REGISTER AS DOCTOR
         </Typography>
         <Box>
           <form className="text-center" onClick={handleLoginSubmit}>

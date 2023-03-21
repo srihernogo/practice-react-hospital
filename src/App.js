@@ -13,6 +13,7 @@ import PatientViewDoctor from './Pages/Doctors/Doctors/PatientViewDoctor';
 import Login from './Pages/Login/Login';
 import AuthProvider from './context/AuthProvider';
 import PageNotFound from './Pages/PageNotFound/PageNotFound';
+import AddPatient from './Pages/Patients/AddPatients/AddPatient';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               <Route path="doctors" element={<PatientViewDoctor />} />
               <Route path="addDoctor" element={<AddDoctor />} />
               <Route path="patients" element={<Patients />} />
+              <Route path="addPatient" element={<AddPatient />} />
               <Route path="staffs" element={<Staffs />} />
               <Route path="appointment" element={<Appointment />}>
                 <Route path=":email" element={<Appointment />} />
