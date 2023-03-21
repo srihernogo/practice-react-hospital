@@ -28,7 +28,7 @@ import TreeView from '@mui/lab/TreeView';
 import TreeItem from '@mui/lab/TreeItem';
 
 import LoginIcon from '@mui/icons-material/Login';
-export { useState } from 'react';
+import useAuth from '../../hooks/useAuth';
 
 const drawerWidth = 240;
 
@@ -87,6 +87,8 @@ export default function NewHeader() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  // User login check
+  const { user } = useAuth();
 
   return (
     <Box sx={{ display: 'flex', background: '#F6F6F6' }}>
@@ -245,19 +247,21 @@ export default function NewHeader() {
                         </ListItem>
                     </NavLink> */}
 
-          <NavLink
-            to="/patients"
-            style={{ textDecoration: 'none', width: '100%', color: '#000' }}
-          >
-            <ListItem disablePadding>
-              <ListItemButton style={{ borderRadius: '0 40px 40px 0' }}>
-                <ListItemIcon>
-                  <TbBed style={{ color: '#000', fontSize: '1.5rem' }} />
-                </ListItemIcon>
-                <ListItemText primary="Patients" />
-              </ListItemButton>
-            </ListItem>
-          </NavLink>
+          {
+            <NavLink
+              to="/patients"
+              style={{ textDecoration: 'none', width: '100%', color: '#000' }}
+            >
+              <ListItem disablePadding>
+                <ListItemButton style={{ borderRadius: '0 40px 40px 0' }}>
+                  <ListItemIcon>
+                    <TbBed style={{ color: '#000', fontSize: '1.5rem' }} />
+                  </ListItemIcon>
+                  <ListItemText primary="Patients" />
+                </ListItemButton>
+              </ListItem>
+            </NavLink>
+          }
           {/* Time and date selection */}
           <NavLink
             to="/appointment"
