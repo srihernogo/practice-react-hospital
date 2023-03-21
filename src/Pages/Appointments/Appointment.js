@@ -60,7 +60,7 @@ const Appointment = () => {
             variant="h6"
             style={{ padding: '2rem 0', marginTop: '-1rem' }}
           >
-            CONFIRMING DOCTOR APPOINMENT
+            DOCTOR APPOINMENT CHOOSEN{' '}
           </Typography>
           <Grid container spacing={2}>
             <Grid item xs={12} md={4}>
@@ -120,26 +120,23 @@ const Appointment = () => {
           </Grid>
         </Grid>
         <hr style={{ marginTop: '2rem', width: '80%' }} />
-        <Box
-          style={{ display: 'flex' }}
-          sx={{ ml: { md: '8rem', xs: '2rem' } }}
-        >
-          <input
-            style={{
-              background: 'green',
-              color: '#FAF5FA ',
-              fontWeight: 800,
-              marginBottom: '1rem',
-              marginTop: '1rem',
-              padding: '1rem 3rem',
-              fontSize: '1rem',
-              borderRadius: '5px',
-              cursor: 'pointer',
-              border: 'none',
-            }}
-            type="submit"
-          />
-        </Box>
+        {/* <Box style={{display:'flex'}} sx={{ml:{md:'8rem', xs:'2rem'}}}>
+            <input
+              style={{
+                background: "green",
+                color: "#FAF5FA ",
+                fontWeight:800,
+                marginBottom:"1rem",
+                marginTop: "1rem",
+                padding: "1rem 3rem",
+                fontSize: "1rem",
+                borderRadius: "5px",
+                cursor:'pointer',
+                border:'none'
+              }}
+              type="submit"
+            />
+          </Box> */}
       </form>
     </Box>
   );
