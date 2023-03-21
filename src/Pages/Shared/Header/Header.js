@@ -108,8 +108,6 @@ function Header(props) {
             <ListItemButton>
               <ListItemIcon>
                 <FaEdit style={{ color: '#000', fontSize: '1.5rem' }} />
-
-                {/* < style={{ color: '#000', fontSize: '1.5rem' }} /> */}
               </ListItemIcon>
               <ListItemText primary="appointment" />
             </ListItemButton>
