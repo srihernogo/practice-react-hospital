@@ -119,19 +119,24 @@ const DoctortReg = () => {
             varient="contained"
             type="submit"
             style={{
-              backgroundColor: ' #e6ecf0',
-              color: 'black',
+              backgroundColor: 'green',
+              color: '#fff',
             }}
           >
             Register
           </Button>
         </Box>
 
-        <Link to="/login">
-          <Button sx={{ width: '50%', m: 1 }} color="inherit">
-            Already have an account
+        <NavLink
+          to="/login"
+          style={{
+            textDecoration: 'none',
+          }}
+        >
+          <Button sx={{ width: '100%', m: 1 }} color="inherit">
+            Already have an account ?
           </Button>
-        </Link>
+        </NavLink>
       </Container>
     </div>
   );

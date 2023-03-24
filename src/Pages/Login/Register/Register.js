@@ -8,6 +8,7 @@ import DoctorReg from '../DoctorReg/DoctorReg';
 import AdminReg from '../AdminReg/AdminReg';
 import PatientReg from '../PatientReg/PatientReg';
 import { Card, Container } from '@mui/material';
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -93,7 +94,7 @@ export default function Register() {
             >
               <Tab label="Patient" {...a11yProps(0)} sx={boxSX} />
               <Tab label="Doctor" {...a11yProps(1)} sx={boxSX} />
-              <Tab label="Admin" {...a11yProps(2)} sx={boxSX} />
+              {/* <Tab label="Admin" {...a11yProps(2)} sx={boxSX} /> */}
             </Tabs>
           </Box>
           <TabPanel value={value} index={0}>
@@ -102,9 +103,9 @@ export default function Register() {
           <TabPanel value={value} index={1}>
             <DoctorReg></DoctorReg>
           </TabPanel>
-          <TabPanel value={value} index={2}>
-            <AdminReg></AdminReg>
-          </TabPanel>
+          {/* <TabPanel value={value} index={2}> */}
+          {/* <AdminReg></AdminReg> */}
+          {/* </TabPanel> */}
         </Box>
       </Container>
     </Card>
