@@ -9,15 +9,15 @@ import GoogleIcon from '@mui/icons-material/Google';
 const Login = () => {
   // Adding google sign-in system
 
-  //   const [loginData,setLoginData] = useState({})
-  //   const handleOnChange = e => {
-  //     const feild = e.target.name;
-  //     const value = e.target.value;
-  //     console.log(feild, value)
-  //     const newLoginData = { ...loginData }
-  //     newLoginData[feild] = value;
-  //     setLoginData(newLoginData);
-  // }
+  const [loginData, setLoginData] = useState({});
+  const handleOnChange = (e) => {
+    const feild = e.target.name;
+    const value = e.target.value;
+    console.log(feild, value);
+    const newLoginData = { ...loginData };
+    newLoginData[feild] = value;
+    setLoginData(newLoginData);
+  };
 
   //   const handleLoginSubmit = e => {
   //     loginUser(loginData.email, loginData.password);

@@ -24,10 +24,14 @@ import {
   MdOutlinePersonSearch,
 } from 'react-icons/md';
 import { TbBed } from 'react-icons/tb';
-import { FcHome } from 'react-icons/fc';
+import { FcApproval, FcHome } from 'react-icons/fc';
 import { Outlet } from 'react-router-dom';
 import { Container } from '@mui/material';
-import { BsCardChecklist, BsPersonCheck } from 'react-icons/bs';
+import {
+  BsCardChecklist,
+  BsPersonCheck,
+  BsPersonLinesFill,
+} from 'react-icons/bs';
 import TreeView from '@mui/lab/TreeView';
 import TreeItem from '@mui/lab/TreeItem';
 
@@ -90,9 +94,8 @@ export default function NewHeader() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
   // User login check
-  //const { user } = useAuth();
+  // const {user} = useAuth();
 
   return (
     <Box sx={{ display: 'flex', background: '#F6F6F6' }}>
@@ -195,7 +198,7 @@ export default function NewHeader() {
                 <FaUserNurse style={{ color: '#000', fontSize: '1.5rem' }} />
               </div>
             }
-            sx={{ height: 240, flexGrow: 1, maxWidth: 400, overflowY: 'auto' }}
+            sx={{ height: 300, flexGrow: 1, maxWidth: 420, overflowY: 'auto' }}
           >
             <TreeItem
               nodeId="1"
@@ -215,6 +218,25 @@ export default function NewHeader() {
                     </ListItemIcon>
                     <ListItemText
                       primary="Appointment"
+                      style={{ marginLeft: '-1rem' }}
+                    />
+                  </ListItemButton>
+                </ListItem>
+              </NavLink>
+              <NavLink
+                to="/approveDoctor"
+                style={{ textDecoration: 'none', width: '100%', color: '#000' }}
+              >
+                <ListItem disablePadding>
+                  <ListItemButton style={{ borderRadius: '0 40px 40px 0' }}>
+                    <ListItemIcon>
+                      {/* <BsCardChecklist style={{ color: '#000', fontSize: '1.3rem' }} /> */}
+                      <BsPersonLinesFill
+                        style={{ color: '#000', fontSize: '1.4rem' }}
+                      />
+                    </ListItemIcon>
+                    <ListItemText
+                      primary="Approval"
                       style={{ marginLeft: '-1rem' }}
                     />
                   </ListItemButton>

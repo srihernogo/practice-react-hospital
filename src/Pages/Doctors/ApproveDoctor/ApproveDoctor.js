@@ -9,10 +9,10 @@ import Paper from '@mui/material/Paper';
 import { NavLink } from 'react-router-dom';
 import { Typography } from '@mui/material';
 
-export default function DeleteDoctor() {
+export default function ApproveDoctor() {
   const [data, setData] = React.useState([]);
   React.useEffect(() => {
-    fetch('http://localhost:5000/approvedDoctors')
+    fetch('http://localhost:5000/pendingDoctors')
       .then((res) => res.json())
       .then((data) => setData(data));
   }, [data]);
@@ -26,12 +26,32 @@ export default function DeleteDoctor() {
           alert('Deleted Successfully');
         }
       });
+    // update the data
+    fetch('http://localhost:5000/pendingDoctors')
+      .then((res) => res.json())
+      .then((data) => setData(data));
   };
+  const handleApprove = (id) => {
+    fetch(`http://localhost:5000/approve/${id}`, {
+      method: 'PUT',
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result) {
+          alert('Approved Successfully');
+        }
+      });
+    // update the data
+    fetch('http://localhost:5000/pendingDoctors')
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  };
+
   return (
     <TableContainer component={Paper}>
       {
         <Typography variant="h6" sx={{ my: 3 }}>
-          Total available doctors: {data ? data.length : 'Loading Data'}
+          Total available request: {data ? data.length : 'Loading Data'}
         </Typography>
       }
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
@@ -45,7 +65,8 @@ export default function DeleteDoctor() {
             <TableCell align="center">Fee</TableCell>
             <TableCell align="center">Phone</TableCell>
             <TableCell align="center">Gender</TableCell>
-            <TableCell align="center">Make Appoinment</TableCell>
+            <TableCell align="center">Remove</TableCell>
+            <TableCell align="center">Approve</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -89,6 +110,27 @@ export default function DeleteDoctor() {
                   type="submit"
                   name="delete"
                   value="Delete"
+                />
+              </TableCell>
+              {/* approve */}
+              <TableCell align="center">
+                <input
+                  style={{
+                    color: '#fff',
+                    background: '#000',
+                    padding: '10px',
+                    cursor: 'pointer',
+                    border: 'none',
+                    borderRadius: '5px',
+                    backgroundColor: 'green',
+                  }}
+                  onClick={() => {
+                    handleApprove(doctorData._id);
+                  }}
+                  id="submit"
+                  type="submit"
+                  name="approve"
+                  value="Approve"
                 />
               </TableCell>
             </TableRow>
